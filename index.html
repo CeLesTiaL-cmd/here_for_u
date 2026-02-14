@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Tuki 💙</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+overflow:hidden;
+color:white;
+}
+
+/* Floating Particles */
+.particles span{
+position:absolute;
+display:block;
+width:8px;
+height:8px;
+background:rgba(255,255,255,0.5);
+border-radius:50%;
+animation:animate 20s linear infinite;
+bottom:-150px;
+}
+
+@keyframes animate{
+0%{transform:translateY(0) scale(0);opacity:0;}
+50%{opacity:1;}
+100%{transform:translateY(-1000px) scale(1);opacity:0;}
+}
+
+/* Glass Card */
+.card{
+position:relative;
+padding:40px;
+width:90%;
+max-width:500px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+border-radius:20px;
+text-align:center;
+box-shadow:0 0 40px rgba(0,0,0,0.6);
+animation:fadeIn 2s ease forwards;
+opacity:0;
+}
+
+@keyframes fadeIn{
+to{opacity:1;}
+}
+
+h1{
+font-size:28px;
+background:linear-gradient(90deg,#00d4ff,#ff00c8);
+-webkit-background-clip:text;
+color:transparent;
+margin-bottom:15px;
+}
+
+p{
+font-size:17px;
+min-height:80px;
+margin-bottom:20px;
+}
+
+button{
+padding:12px 28px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#00d4ff,#ff00c8);
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px #ff00c8;
+}
+
+.heart{
+font-size:60px;
+margin-top:20px;
+animation:beat 1s infinite;
+display:none;
+}
+
+@keyframes beat{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.3);}
+}
+
+@media(max-width:600px){
+h1{font-size:22px;}
+p{font-size:15px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="particles">
+<span style="left:10%;animation-delay:0s;"></span>
+<span style="left:25%;animation-delay:2s;"></span>
+<span style="left:40%;animation-delay:4s;"></span>
+<span style="left:60%;animation-delay:1s;"></span>
+<span style="left:75%;animation-delay:3s;"></span>
+<span style="left:90%;animation-delay:5s;"></span>
+</div>
+
+<div class="card">
+<h1>Masrurah Hossain Nubah 💙</h1>
+<p id="text"></p>
+<button onclick="showLove()">Open My Heart</button>
+<div class="heart" id="heart">💙</div>
+</div>
+
+<script>
+
+const message = "Tuki... you are the peace in my storms, the glow in my darkness, and the reason my heart beats softer yet stronger. I don't want just moments with you. I want a lifetime of memories with you.";
+
+let i=0;
+function type(){
+if(i<message.length){
+document.getElementById("text").innerHTML+=message.charAt(i);
+i++;
+setTimeout(type,35);
+}
+}
+
+type();
+
+function showLove(){
+document.getElementById("heart").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
